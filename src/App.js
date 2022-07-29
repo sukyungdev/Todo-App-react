@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import InputForm from "./components/InputForm";
-import List from "./components/List";
+import Lists from "./components/Lists";
+// import { FaBeer } from "react-icons/fa";
 
 function App() {
     const [value, setValue] = useState("");
@@ -21,10 +22,14 @@ function App() {
     };
 
     return (
-        <div className="container">
-            <div className="todo-app">
-                <h1>할일 목록</h1>
-                <List toDoData={toDoData} setToDoData={setToDoData} />
+        <div className="w-screen h-screen flex justify-center items-center bg-green-200 p-5">
+            <div className="p-5 bg-white rounded w-full shadow md:max-w-lg lg:max-w-xl">
+                <div className="mb-3">
+                    <h1 className="text-purple-500 text-lg font-Poppins text-center">
+                        To Do App
+                    </h1>
+                </div>
+                <Lists toDoData={toDoData} setToDoData={setToDoData} />
                 <InputForm
                     value={value}
                     setValue={setValue}

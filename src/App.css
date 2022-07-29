@@ -1,8 +1,16 @@
-.container {
-  margin: auto;
-  max-width: 600px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
+input:focus {
+  outline: none;
 }
 
-.todo-app {
-  background-color: #fff;
+body {
+  font-family: NanumGothic;
 }
+
