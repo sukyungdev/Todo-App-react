@@ -1,8 +1,5 @@
-import React from "react";
-
 export default function InputForm({ userSubmit, value, setValue }) {
     const userInput = (e) => {
-        console.log(e.target.value);
         setValue(e.target.value);
     };
 
@@ -15,6 +12,7 @@ export default function InputForm({ userSubmit, value, setValue }) {
                 placeholder="오늘은 무엇을 할까?"
                 value={value}
                 onChange={userInput}
+                required
             ></input>
             <button
                 className="px-2 py-1 shadow text-purple-500 rounded border-2 border-purple-400 bg-amber-200 hover:bg-purple-400 hover:text-amber-200 transition-all duration-500"

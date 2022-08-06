@@ -7,6 +7,7 @@ demo
 
 -   React
     -   react-beautiful-dnd
+    -   react-icons
 -   TailWindCSS
 
 ## Deploy
@@ -17,6 +18,8 @@ netlify를 이용하여 배포하였습니다.
 ## plan
 
 -   Drag and Drop (완료)
+-   컴포넌트 렌더링 최적화
+-   수정 기능
 
 ## History
 
