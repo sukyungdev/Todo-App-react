@@ -5,6 +5,7 @@ import Lists from "./components/Lists";
 // import { FaBeer } from "react-icons/fa";
 
 function App() {
+    console.log("App Component");
     const [value, setValue] = useState("");
     const [toDoData, setToDoData] = useState([]);
 

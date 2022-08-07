@@ -1,4 +1,5 @@
 export default function InputForm({ userSubmit, value, setValue }) {
+    console.log("InputForm Component");
     const userInput = (e) => {
         setValue(e.target.value);
     };
