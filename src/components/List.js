@@ -1,17 +1,8 @@
 import React from "react";
 import { BsCheck } from "react-icons/bs";
 const List = React.memo(
-    ({ id, content, completed, toDoData, setToDoData, provided, snapshot }) => {
+    ({ id, content, completed, toDoData, setToDoData, provided, snapshot, completeChange }) => {
         console.log("List Component");
-        const completeChange = (id) => {
-            let newToDoData = toDoData.map((data) => {
-                if (data.id === id) {
-                    data.completed = !data.completed;
-                }
-                return data;
-            });
-            setToDoData(newToDoData);
-        };
 
         const checkChange = (id) => {
             let newToDoData = toDoData.filter((data) => data.id !== id);
@@ -40,11 +31,7 @@ const List = React.memo(
                         htmlFor={id}
                         className="w-7 h-7 mr-3 rounded-full border-2 border-purple-400 bg-amber-300 flex items-center justify-center"
                     >
-                        {completed ? (
-                            <BsCheck size={50} color={"purple"} />
-                        ) : (
-                            ""
-                        )}
+                        {completed ? <BsCheck size={50} color={"purple"} /> : ""}
                     </label>
                     <span
                         className={`${

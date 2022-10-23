@@ -3,7 +3,7 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 import List from "./List";
 
-const Lists = React.memo(({ toDoData, setToDoData }) => {
+const Lists = React.memo(({ toDoData, setToDoData, completeChange }) => {
     console.log("Lists Component");
     //Drag and Drop
     const changeList = (info) => {
@@ -26,10 +26,7 @@ const Lists = React.memo(({ toDoData, setToDoData }) => {
             <DragDropContext onDragEnd={changeList}>
                 <Droppable droppableId="list">
                     {(provided) => (
-                        <div
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                        >
+                        <div {...provided.droppableProps} ref={provided.innerRef}>
                             {toDoData.map((data, index) => (
                                 <Draggable
                                     key={data.id}
@@ -38,6 +35,7 @@ const Lists = React.memo(({ toDoData, setToDoData }) => {
                                 >
                                     {(provided, snapshot) => (
                                         <List
+                                            completeChange={completeChange}
                                             id={data.id}
                                             content={data.content}
                                             completed={data.completed}
